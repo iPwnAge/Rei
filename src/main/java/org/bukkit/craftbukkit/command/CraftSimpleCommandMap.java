@@ -6,11 +6,13 @@ import java.util.regex.Pattern;
 
 import net.minecraft.command.ICommandSender;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandException;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.command.RemoteConsoleCommandSender;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
 
@@ -29,6 +31,9 @@ public class CraftSimpleCommandMap extends SimpleCommandMap {
      * {@inheritDoc}
      */
     public boolean dispatch(CommandSender sender, String commandLine) throws CommandException {
+        //Rei start: fix RCON forwarding commands to ModCustomMod
+        if (sender instanceof RemoteConsoleCommandSender) sender = Bukkit.getServer().getConsoleSender();
+        //Rei end
         String[] args = PATTERN_ON_SPACE.split(commandLine);
 
         if (args.length == 0) {
