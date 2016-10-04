@@ -2,12 +2,6 @@
 
 <img src="http://i.imgur.com/4JoNdAe.png" height="100px">
 
-
-![Minecraft Forge v10.13.4.1614][forge]
-![Minecraft v1.7.10][mc]
-![Java JDK v1.8][java]
-![Spigot 1.7.10 Snapshot ][spigot]
-
 ### What's Rei?
 Rei is a fork of Thermos, a craftbukkit forge server for Minecraft 1.7.10. It seeks to improve performance on the already lean Thermos, as well as fine tuning specific to the iPwnAge Network FTB server. 
 
